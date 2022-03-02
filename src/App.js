@@ -24,7 +24,7 @@ export default function App() {
 }
 
 function Model({ name, ...props }) {
-  const { nodes } = useGLTF('/TEST_BAG.glb')
+  const { nodes } = useGLTF('/VeganBag.glb')
   return <mesh geometry={nodes[name].geometry} material={nodes[name].material} material-emissive="red" material-roughness={1} {...props} dispose={null} />
 }
 
