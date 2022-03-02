@@ -10,6 +10,7 @@ export default function App() {
       <hemisphereLight color="white" groundColor="#ff0f00" position={[-7, 25, 13]} intensity={1} />
 
       <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 1.75} />
+
       <Suspense fallback={null}>
         <Bounds fit clip margin={1.2}>
           <SelectToZoom>
@@ -25,7 +26,7 @@ export default function App() {
 
 function Model({ name, ...props }) {
   const { nodes } = useGLTF('/VeganBag.glb')
-  return <mesh geometry={nodes[name].geometry} material={nodes[name].material} material-emissive="red" material-roughness={1} {...props} dispose={null} />
+  return <mesh geometry={nodes[name].geometry} material={nodes[name].material} {...props} dispose={null} />
 }
 
 // This component wraps children in a group with a click handler
